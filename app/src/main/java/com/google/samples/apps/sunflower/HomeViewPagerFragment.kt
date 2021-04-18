@@ -21,7 +21,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.samples.apps.sunflower.adapters.MY_GARDEN_PAGE_INDEX
 import com.google.samples.apps.sunflower.adapters.PLANT_LIST_PAGE_INDEX
@@ -50,6 +53,11 @@ class HomeViewPagerFragment : Fragment() {
         }.attach()
 
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, getString(R.string.msg_clicked), Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            hideAppBarFab(binding.fab)
+        }
 
         return binding.root
     }
@@ -68,5 +76,12 @@ class HomeViewPagerFragment : Fragment() {
             PLANT_LIST_PAGE_INDEX -> getString(R.string.plant_list_title)
             else -> null
         }
+    }
+
+    private fun hideAppBarFab(fab: FloatingActionButton) {
+        val params = fab.layoutParams as CoordinatorLayout.LayoutParams
+        val behavior = params.behavior as FloatingActionButton.Behavior
+        behavior.isAutoHideEnabled = false
+        fab.hide()
     }
 }
