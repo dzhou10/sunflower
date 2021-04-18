@@ -74,10 +74,23 @@
                 style="@style/Widget.MaterialComponents.TabLayout.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:visibility="gone"
                 app:tabIconTint="@drawable/tab_icon_color_selector"
                 app:tabTextColor="?attr/colorPrimaryDark"/>
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:tint="@android:color/white"
+            app:shapeAppearance="@style/ShapeAppearance.Sunflower.FAB"
+            app:layout_anchor="@id/view_pager"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_plus" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
