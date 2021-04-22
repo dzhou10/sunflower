@@ -57,6 +57,7 @@ class HomeViewPagerFragment : Fragment() {
             Snackbar.make(view, getString(R.string.msg_clicked), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             hideAppBarFab(binding.fab)
+            binding.fabText.visibility = View.GONE
             binding.tabs.visibility = View.VISIBLE
         }
 

@@ -82,15 +82,21 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            android:tint="@android:color/white"
-            app:shapeAppearance="@style/ShapeAppearance.Sunflower.FAB"
-            app:layout_anchor="@id/view_pager"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@drawable/ic_plus" />
+            app:backgroundTint="@color/sunflower_green_300" />
+
+        <TextView android:layout_height="wrap_content"
+            android:id="@+id/fabText"
+            android:layout_width="wrap_content"
+            android:text="Assist"
+            android:elevation="6dp"
+            android:textSize="18dp"
+            android:textColor="#fff"
+            app:layout_anchor="@id/fab"
+            app:layout_anchorGravity="center"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
